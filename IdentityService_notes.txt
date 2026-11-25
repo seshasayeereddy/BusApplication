@@ -1,0 +1,78 @@
+Backend	Frontend
+controller	pages + api
+service	services
+dto	models/interfaces
+security	security
+constants	constants
+validator	validators
+config	config
+util	utils
+entity	models
+repository	N/A
+mapper	Data transformation functions
+
+1. Recommended Production React Architecture 
+src/
+│
+├── app/
+├── features/
+│   ├── auth/
+│   ├── users/
+│   ├── products/
+│   ├── orders/
+│   ├── dashboard/
+│   └── reports/
+│
+├── components/
+├── hooks/
+├── services/
+├── utils/
+├── layouts/
+├── assets/
+└── types/
+└── constants/
+
+app         → Start application
+features    → Business functionality
+components  → Reusable UI ,resuable any where 
+hooks       → Reusable logic,same logic we use any where 
+services    → Backend communication
+utils       → Helper functions
+layouts     → Page template
+assets      → Static files
+types       → Data shapes
+constants   → Fixed values
+
+
+ 
+Used only by Identity?
+→ features/identity
+s
+Used only by Operator?
+→ features/operator
+
+Used by both Identity and Operator?
+→ Global folders (components, hooks, services, utils, types, constants)
+
+
+
+
+User opens Users Page
+        ↓
+Feature (users)
+        ↓
+Hook fetches user data
+        ↓
+Service calls backend API
+        ↓
+Backend returns users
+        ↓
+Component displays table
+        ↓
+Layout provides header/sidebar
+        ↓
+Assets show icons/images
+        ↓
+Types define User structure
+        ↓
+Constants provide API URL
